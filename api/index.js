@@ -1,13 +1,13 @@
 const express = require('express');
 
-const { getAllProjects } = require('./controller/AMES/get');
-const {getAllUsers} = require('./controller/Users/get')
+const { getAllProjects } = require('../controller/AMES/get');
+const {getAllUsers} = require('../controller/Users/get')
 
-const {addProject} = require('./controller/AMES/post')
+const {addProject} = require('../controller/AMES/post')
 
-const {deleteProject} = require('./controller/AMES/delete')
+const {deleteProject} = require('../controller/AMES/delete')
 
-const { update } = require("./controller/AMES/update")
+const { update } = require("../controller/AMES/update")
 const app = express();
 const port = 3001;
 const cors = require('cors')
