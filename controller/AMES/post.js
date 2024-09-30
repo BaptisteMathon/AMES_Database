@@ -7,6 +7,7 @@ async function addProject(nameProject){
         "task": [
           {
             "Name": "",
+            "Charges": "0",
             "Ressources": "",
             "Début": "",
             "Fin": "",

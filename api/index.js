@@ -11,6 +11,10 @@ const {deleteProject} = require('../controller/AMES/delete')
 const {deleteRessource} = require('../controller/Ressources/delete')
 
 const { update } = require("../controller/AMES/update")
+
+const { getSemaine } = require('../controller/Semaine/get')
+const { updateSemaine } = require('../controller/Semaine/update')
+
 const app = express();
 const port = 3001;
 const cors = require('cors')
@@ -39,6 +43,15 @@ app.get('/getRessources', async (req, res) => {
     try{
         const ressources = await getAllRessources()
         res.json(ressources)
+    } catch(err){
+        res.status(500).json({err: 'Internal Server Error'})
+    }
+})
+
+app.get('/getSemaine', async (req, res) => {
+    try{
+        const semaine = await getSemaine()
+        res.json(semaine)
     } catch(err){
         res.status(500).json({err: 'Internal Server Error'})
     }
@@ -86,6 +99,15 @@ app.get('/deleteRessource/:ressource', async(req, res) => {
         res.json(ressource)
     } catch(err){
         res.status(500).json({err: 'Internal Server Error'})
+    }
+})
+
+app.get('/updateSemaine/:lundi/:mardi/:mercredi/:jeudi/:vendredi/:samedi/:dimanche', async (req, res) => {
+    try{
+        const update = await updateSemaine(req.params.lundi, req.params.mardi, req.params.mercredi, req.params.jeudi, req.params.vendredi, req.params.samedi, req.params.dimanche)
+        res.json(update)
+    } catch(err){
+        res.status(500).json({err : 'Internal Server Error'})
     }
 })
 

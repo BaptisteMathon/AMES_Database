@@ -30,10 +30,12 @@ async function update(data, child){
             tempstring = restOfString.split('___')
             dictChild = {}
             dictChild['Name'] = tempstring[0]
-            dictChild['Ressources'] = tempstring[1]
-            dictChild['Début'] = tempstring[2]
-            dictChild['Fin'] = tempstring[3]
-            dictChild['Réal'] = tempstring[4]
+            dictChild['Charges'] = tempstring[1]
+            dictChild['Dispo'] = tempstring[2]
+            dictChild['Ressources'] = tempstring[3]
+            dictChild['Début'] = tempstring[4]
+            dictChild['Fin'] = tempstring[5]
+            dictChild['Réal'] = tempstring[6]
 
             arrrayChild.push(dictChild)
             if(tempDict[numero]){
@@ -55,10 +57,12 @@ async function update(data, child){
 
             Dict = {}
             Dict['Name'] = tempdata[0]
-            Dict['Ressources'] = tempdata[1]
-            Dict['Début'] = tempdata[2]
-            Dict['Fin'] = tempdata[3]
-            Dict['Réal'] = tempdata[4]
+            Dict['Charges'] = tempdata[1]
+            Dict['Dispo'] = tempdata[2]
+            Dict['Ressources'] = tempdata[3]
+            Dict['Début'] = tempdata[4]
+            Dict['Fin'] = tempdata[5]
+            Dict['Réal'] = tempdata[6]
 
             // console.log(tempDict)
             if(tempDict[ind]){
